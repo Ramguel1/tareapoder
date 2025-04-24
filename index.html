@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Poder Ejecutivo - Sistema Constitucional Mexicano</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+  <style>
+    :root {
+      --color-primario: #8B0000;
+      --color-secundario: #FFD700;
+      --sombra: 0 4px 6px rgba(0,0,0,0.1);
+    }
+
+    body {
+      background: #f8f9fa;
+      font-family: 'Segoe UI', system-ui;
+      overflow-x: hidden;
+    }
+
+    .sidebar {
+      height: 100vh;
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 250px;
+      background-color: var(--color-primario);
+      padding-top: 60px;
+      transition: transform 0.3s ease;
+      transform: translateX(0);
+    }
+
+    .sidebar.hide {
+      transform: translateX(-100%);
+    }
+
+    .sidebar a {
+      display: block;
+      padding: 1rem;
+      color: white;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+
+    .sidebar a:hover {
+      background-color: #600000;
+    }
+
+    .toggle-btn {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      background-color: var(--color-secundario);
+      border: none;
+      padding: 10px;
+      border-radius: 50%;
+      box-shadow: var(--sombra);
+      cursor: pointer;
+      z-index: 1000;
+    }
+
+    .contenido-principal {
+      margin-left: 250px;
+      padding: 2rem;
+      transition: margin-left 0.3s ease;
+    }
+
+    .contenido-principal.expand {
+      margin-left: 0;
+    }
+
+    .articulo-legal {
+      background: #fff9f9;
+      border-left: 4px solid var(--color-primario);
+      padding: 2rem;
+      margin: 2rem 0;
+      border-radius: 0 12px 12px 0;
+    }
+
+    .badge-constitucion {
+      background: linear-gradient(45deg, #8B0000, #600000);
+      color: white;
+      padding: 0.5rem 1.2rem;
+      border-radius: 25px;
+      font-size: 0.9em;
+      display: inline-block;
+      margin-bottom: 1rem;
+    }
+
+    .tabla-especial {
+      border: 1px solid #dee2e6;
+      border-radius: 12px;
+      overflow: hidden;
+      margin: 1.5rem 0;
+    }
+
+    .encabezado-tabla {
+      background: var(--color-primario);
+      color: white;
+      padding: 1rem;
+      font-weight: 600;
+      font-size: 1.1em;
+    }
+
+    .item-tabla {
+      padding: 1.2rem;
+      border-bottom: 1px solid #dee2e6;
+    }
+
+    .item-tabla:last-child {
+      border-bottom: none;
+    }
+
+    .card-articulo {
+      border: 2px solid var(--color-primario);
+      border-radius: 12px;
+      margin-top: 1rem;
+    }
+
+    .floating-button {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: var(--color-secundario);
+      color: black;
+      border: none;
+      padding: 1rem;
+      border-radius: 50%;
+      box-shadow: var(--sombra);
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    .floating-button:hover {
+      transform: scale(1.1);
+    }
+  </style>
+</head>
+<body>
+
+  <button class="toggle-btn" onclick="toggleSidebar()">
+    <i class="bi bi-list"></i>
+  </button>
+
+  <!-- Menú lateral -->
+  <div class="sidebar" id="sidebar">
+    <a href="#federal">Federal</a>
+    <a href="#estatal">Estatal</a>
+    <a href="#municipal">Municipal</a>
+  </div>
+
+  <!-- Contenido principal -->
+  <div class="contenido-principal" id="main">
+    <!-- (Contenido anterior sin cambios) -->
+    <div class="articulo-legal" id="federal">
+        <h2><span class="badge-constitucion">Presidente</span> - Nivel Federal</h2>
+        <p>El Presidente de la República es el titular del Poder Ejecutivo Federal. Su autoridad proviene del sufragio directo y su papel está claramente definido en la Constitución.</p>
+        <div class="card card-articulo">
+          <div class="card-body">
+            <h4><span class="badge-constitucion">Art. 80</span> Ejercicio del Poder Ejecutivo</h4>
+            <p>Se deposita el ejercicio del Supremo Poder Ejecutivo de la Unión en un solo individuo, que se denominará "Presidente de los Estados Unidos Mexicanos".</p>
+          </div>
+        </div>
+        <div class="card card-articulo">
+          <div class="card-body">
+            <h4><span class="badge-constitucion">Art. 81</span> Elección del Presidente</h4>
+            <p>La elección del Presidente será directa y en los términos que disponga la ley electoral.</p>
+          </div>
+        </div>
+        <div class="card card-articulo">
+          <div class="card-body">
+            <h4><span class="badge-constitucion">Art. 82</span> Requisitos</h4>
+            <p>Ser ciudadano mexicano por nacimiento, tener 35 años cumplidos al tiempo de la elección, entre otros requisitos.</p>
+          </div>
+        </div>
+        <div class="card card-articulo">
+          <div class="card-body">
+            <h4><span class="badge-constitucion">Art. 83</span> Duración y Reelección</h4>
+            <p>El cargo de Presidente durará seis años. El ciudadano que haya desempeñado el cargo no podrá volver a ocuparlo en ningún caso.</p>
+          </div>
+        </div>
+        <div class="card card-articulo">
+          <div class="card-body">
+            <h4><span class="badge-constitucion">Art. 89</span> Facultades del Presidente</h4>
+            <ul>
+              <li>Promulgar y ejecutar las leyes</li>
+              <li>Nombrar y remover a secretarios de Estado</li>
+              <li>Dirigir la política exterior</li>
+              <li>Preservar la seguridad nacional</li>
+              <li>Conducir la política interior del país</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Sección Estatal -->
+      <div class="articulo-legal" id="estatal">
+        <h2><span class="badge-constitucion">Gobernador</span> - Nivel Estatal</h2>
+        <p>El Gobernador es la cabeza del Poder Ejecutivo Estatal y representa la soberanía de cada estado libre y soberano en la Federación.</p>
+        <div class="card card-articulo">
+          <div class="card-body">
+            <h4><span class="badge-constitucion">Art. 116</span> Gobierno de los Estados</h4>
+            <p>Los estados adoptarán, para su régimen interior, la forma de gobierno republicano, representativo, democrático, laico y popular, con división de poderes.</p>
+          </div>
+        </div>
+        <div class="card card-articulo">
+          <div class="card-body">
+            <h4><span class="badge-constitucion">Art. 117</span> Prohibiciones a los Estados</h4>
+            <p>Prohíbe a los estados realizar tratados con gobiernos extranjeros o mantener tropas permanentes sin autorización federal.</p>
+          </div>
+        </div>
+        <div class="card card-articulo">
+          <div class="card-body">
+            <h4><span class="badge-constitucion">Art. 122</span> Régimen del Distrito Federal</h4>
+            <p>Define el marco legal para la Ciudad de México como entidad federativa y sede de los poderes federales.</p>
+          </div>
+        </div>
+        <div class="card card-articulo">
+          <div class="card-body">
+            <h4><span class="badge-constitucion">Art. 124</span> Facultades no delegadas</h4>
+            <p>Las facultades no expresamente concedidas a la Federación se entienden reservadas a los estados.</p>
+          </div>
+        </div>
+        <div class="card card-articulo">
+          <div class="card-body">
+            <h4><span class="badge-constitucion">Art. 125</span> Incompatibilidad de cargos</h4>
+            <p>Ningún individuo podrá desempeñar dos cargos federales de elección popular simultáneamente.</p>
+          </div>
+        </div>
+      </div>
+  
+    
+  
+  
+    <!-- Sección Municipal completada -->
+    <div class="articulo-legal" id="municipal">
+      <h2><span class="badge-constitucion">Ayuntamiento</span> - Nivel Municipal</h2>
+      <p>El municipio es la base de la división territorial y de la organización política y administrativa de los estados. El Ayuntamiento, encabezado por el Presidente Municipal, ejerce el Poder Ejecutivo local con autonomía administrativa.</p>
+
+      <div class="tabla-especial">
+        <div class="encabezado-tabla">⚖ REQUISITOS GENERALES</div>
+        <div class="item-tabla">Ser ciudadano mexicano por nacimiento y vecino del municipio</div>
+        <div class="item-tabla">Tener al menos 21 años cumplidos (varía según constitución local)</div>
+        <div class="item-tabla">No estar en servicio militar activo ni ejercer ciertos cargos públicos antes de la elección</div>
+        <div class="item-tabla">Cumplir con requisitos establecidos por la constitución del estado</div>
+      </div>
+
+      <div class="tabla-especial">
+        <div class="encabezado-tabla">🕒 DURACIÓN Y REELECCIÓN</div>
+        <div class="item-tabla">El mandato municipal es de 3 años</div>
+        <div class="item-tabla">Puede haber reelección inmediata por un periodo adicional</div>
+        <div class="item-tabla">En caso de ausencia, el Cabildo designa un presidente interino o sustituto</div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-6">
+          <div class="card card-articulo">
+            <div class="card-body">
+              <h4><span class="badge-constitucion">Atribuciones Generales</span></h4>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">Proveer servicios públicos básicos (agua, alumbrado, limpia, seguridad, etc.)</li>
+                <li class="list-group-item">Administrar los recursos municipales</li>
+                <li class="list-group-item">Expedir bandos y reglamentos municipales</li>
+                <li class="list-group-item">Impulsar el desarrollo urbano y ordenamiento territorial</li>
+                <li class="list-group-item">Fomentar la participación ciudadana</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="card card-articulo">
+            <div class="card-body">
+              <h4><span class="badge-constitucion">Art. 115</span> Organización y Autonomía</h4>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">Autonomía en gestión de recursos y organización interna</li>
+                <li class="list-group-item">Capacidad normativa en el ámbito de su competencia</li>
+                <li class="list-group-item">Participación en coordinación metropolitana</li>
+                <li class="list-group-item">Integración mediante Ayuntamiento: Presidente, Síndicos y Regidores</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tabla-especial mt-4">
+        <div class="encabezado-tabla">📋 FUNCIONES CLAVE</div>
+        <div class="item-tabla">Aplicar programas de desarrollo comunitario</div>
+        <div class="item-tabla">Garantizar la seguridad pública a través de la policía municipal</div>
+        <div class="item-tabla">Gestionar obras públicas y servicios sociales</div>
+        <div class="item-tabla">Rendir cuentas al Congreso estatal y ciudadanía</div>
+        <div class="item-tabla">Coordinarse con otros niveles de gobierno en casos de emergencia</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Botón para volver arriba -->
+  <button class="floating-button" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+    <i class="bi bi-arrow-up"></i>
+  </button>
+
+  <script>
+    function toggleSidebar() {
+      const sidebar = document.getElementById('sidebar');
+      const main = document.getElementById('main');
+      sidebar.classList.toggle('hide');
+      main.classList.toggle('expand');
+    }
+  </script>
+
+</body>
+</html>
+
